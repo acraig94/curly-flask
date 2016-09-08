@@ -3,7 +3,6 @@ MAINTAINER Alan Craig <acraig94@gmail.com>
 
 RUN apt-get -qqy update
 RUN apt-get -qqy install git libcurl4-openssl-dev curl build-essential python
-RUN gem install --no-ri --no-rdoc uwsgi sinatra
 
 RUN pip install -r requirements.txt
 
