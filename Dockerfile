@@ -4,10 +4,12 @@ MAINTAINER Alan Craig <acraig94@gmail.com>
 RUN apt-get -qqy update
 RUN apt-get -qqy install git libcurl4-openssl-dev curl build-essential python
 
-RUN pip install -r requirements.txt
-
 RUN mkdir -p /opt/flask_app
 WORKDIR /opt/flask_app
+
+ADD requirements.txt /opt/flask_app
+
+RUN pip install -r requirements.txt
 
 RUN uwsgi --build-plugin https://github.com/unbit/uwsgi-consul
 
